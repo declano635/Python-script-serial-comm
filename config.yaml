@@ -1,0 +1,17 @@
+tests:
+  - name: "Check Device Version"
+    command: "GET_VERSION"
+    expected_response: "v1.2.3"
+  
+  - name: "Test LED Toggle"
+    command: "TOGGLE_LED"
+    expected_response: "OK"
+
+  - name: "Read Temperature Sensor"
+    command: "READ_TEMP"
+    expected_response: "25.4C"
+
+  - name: "Invalid Command"
+    command: "INVALID_CMD"
+    expected_response: "ERROR"
+
