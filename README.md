@@ -15,11 +15,13 @@ pip install pyserial pyyaml
 Libraries Used:
 
 pyserial: A Python library to simulate serial communication.
+
 pyyaml: A library to handle test configurations in a YAML format, making it easier to edit and manage.
 
 ## Step 2: Set Up a Virtual Serial Port on macOS
 
 Since we are simulating hardware, we will create a pair of virtual serial ports using socat. This will allow two Python scripts to communicate as if they were connected to actual hardware.
+
 1️⃣ Install socat
 
 Install socat on macOS using Homebrew:
@@ -47,21 +49,30 @@ The other port will be used by the test script to simulate communication.
 ## 🚀 Running the Project
 
 1️⃣ Start the Mock Hardware
+
 python mock_hardware.py
+
 (Simulates a device sending data every 2 seconds.)
 
 2️⃣ Start the Test Runner
+
 python test_runner.py
+
 (Listens for data and verifies expected responses.)
 
 ## Expected Output
 ✅ PASS - Check Device Version (Response: v1.2.3)
+
 ✅ PASS - Test LED Toggle (Response: OK)
+
 ✅ PASS - Read Temperature Sensor (Response: 25.4C)
+
 ✅ PASS - Invalid Command (Response: ERROR)
 
 === TEST RESULTS ===
 4 tests run, 4 passed, 0 failed.
+
+
 
 
 
